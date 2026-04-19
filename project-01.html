@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 01 - Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS SPECIFICO: Se vuoi regole solo per QUESTA pagina, mettile qui */
+        body { opacity: 0; } /* Necessario per il fade-in */
+    </style>
+</head>
+
+<body class="project-body">
+
+    <a href="index.html" class="back-button" id="backBtn">← BACK TO GALLERY</a>
+
+    <img class="fullscreen-img" src="img/prg_01/img_05.jpg" alt="Cover">
+
+    <div class="project-content">
+        <h1 class="project-title">01. HIVE</h1>
+        
+        <p class="project-description">
+            Il progetto mira a riutilizzare lastre di PLA riciclato per dar loro nuova vita attraverso la creazione di un oggetto funzionale.La scelta è ricaduta su uno svuotatasche modulabile, composto da più livelli di lastre tagliate a laser. L’obiettivo è dimostrare come un materiale riciclato possa generare un prodotto sostenibile e di qualità, unendo design e riuso in un approccio di economia circolare. 
+        </p>
+
+        <div class="project-grid">
+            
+            <div style="grid-column: span 2;">
+                <img src="img/prg_01/img_03.jpg" class="img-full">
+                <div class="caption">Fig 1. Vista superiore</div>
+            </div>
+
+            <div>
+                <img src="img/prg_01/img_01.jpg" class="img-half">
+            </div>
+
+            <div>
+                <img src="img/prg_01/img_03.jpg" class="img-half">
+            </div>
+
+            <div style="grid-column: span 2; padding: 40px 0; text-align: center;">
+                <!-- <p><em>"Il design non è solo ciò che vedi, ma come funziona."</em><br>- Dettaglio tecnico della struttura</p> -->
+            </div>
+
+            <div style="grid-column: span 2;">
+                <img src="img/prg_01/img_06.jpg" class="img-full">
+            </div>
+
+        </div>
+        <br><br>
+        <p class="project-description">
+            <strong>TECHNICAL DATA:</strong><br>
+            Year: 2025<br>
+            Material: Glass, Aluminum
+        </p>
+
+    </div>
+
+    <script>
+        // 1. Fade In all'apertura
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // 2. Fade Out al ritorno
+        document.getElementById('backBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

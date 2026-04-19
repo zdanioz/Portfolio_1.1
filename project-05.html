@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 01 - Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS SPECIFICO: Se vuoi regole solo per QUESTA pagina, mettile qui */
+        body { opacity: 0; } /* Necessario per il fade-in */
+    </style>
+</head>
+
+<body class="project-body">
+
+    <a href="index.html" class="back-button" id="backBtn">← BACK TO GALLERY</a>
+
+    <img class="fullscreen-img" src="https://www.nendo.jp/wp/wp-content/uploads/2025/03/tomoshi_01_masahiro_ohgami.jpg" alt="Cover">
+
+    <div class="project-content">
+        <h1 class="project-title">01. TOMOSHI LIGHT</h1>
+        
+        <p class="project-description">
+            Questa è la descrizione principale del progetto. Essendo un file HTML indipendente, puoi strutturare questa pagina come preferisci.<br><br>
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <div class="project-grid">
+            
+            <div style="grid-column: span 2;">
+                <img src="https://www.nendo.jp/wp/wp-content/uploads/2025/03/tomoshi_02_masahiro_ohgami.jpg" class="img-full">
+                <div class="caption">Fig 1. Vista frontale completa</div>
+            </div>
+
+            <div>
+                <img src="https://www.nendo.jp/wp/wp-content/uploads/2025/03/tomoshi_04_masahiro_ohgami.jpg" class="img-half">
+            </div>
+
+            <div>
+                <img src="https://www.nendo.jp/wp/wp-content/uploads/2025/03/tomoshi_05_masahiro_ohgami.jpg" class="img-half">
+            </div>
+
+            <div style="grid-column: span 2; padding: 40px 0; text-align: center;">
+                <p><em>"Il design non è solo ciò che vedi, ma come funziona."</em><br>- Dettaglio tecnico della struttura</p>
+            </div>
+
+            <div style="grid-column: span 2;">
+                <img src="https://www.nendo.jp/wp/wp-content/uploads/2025/03/tomoshi_06_masahiro_ohgami.jpg" class="img-full">
+            </div>
+
+        </div>
+        <br><br>
+        <p class="project-description">
+            <strong>TECHNICAL DATA:</strong><br>
+            Year: 2025<br>
+            Material: Glass, Aluminum
+        </p>
+
+    </div>
+
+    <script>
+        // 1. Fade In all'apertura
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // 2. Fade Out al ritorno
+        document.getElementById('backBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

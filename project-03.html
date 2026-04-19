@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 01 - Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS SPECIFICO: Se vuoi regole solo per QUESTA pagina, mettile qui */
+        body { opacity: 0; } /* Necessario per il fade-in */
+    </style>
+</head>
+
+<body class="project-body">
+
+    <a href="index.html" class="back-button" id="backBtn">← BACK TO GALLERY</a>
+
+    <img class="fullscreen-img" src="img/prg_03/img_01.jpg" alt="Cover">
+
+    <div class="project-content">
+        <h1 class="project-title">03. ALPURA</h1>
+        
+        <p class="project-description">
+            The project was born from the challenge of designing a line of iconic souvenirs dedicated to winter sports, combining sustainability with modern design. Through the use of wood for a warm, natural aesthetic, the concept captures the dynamism of athletes 
+            in primitive geometric forms, evoking the tradition of Italian toys in a contemporary and essential key.
+        </p>
+
+        <div class="project-grid">
+            
+            <div style="grid-column: span 2;">
+                <img src="img/prg_03/img_05.jpg" class="img-full">
+                <!-- <div class="caption">Fig 1. Vista frontale completa</div> -->
+            </div>
+
+            <div>
+                <img src="img/prg_03/img_02.jpg" class="img-half">
+            </div>
+
+            <div>
+                <img src="img/prg_03/img_03.jpg" class="img-half">
+            </div>
+
+            <!--
+            <div style="grid-column: span 2; padding: 40px 0; text-align: center;">
+                <p><em>"Il design non è solo ciò che vedi, ma come funziona."</em><br>- Dettaglio tecnico della struttura</p>
+            </div>
+            -->
+
+            <div style="grid-column: span 2;">
+                <img src="img/prg_03/img_04.jpg" class="img-full">
+            </div>
+        
+
+        </div>
+        <br><br>
+        <p class="project-description">
+            <strong>TECHNICAL DATA:</strong><br>
+            Year: 2025<br>
+            Material: Glass, Aluminum
+        </p>
+
+    </div>
+
+    <script>
+        // 1. Fade In all'apertura
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // 2. Fade Out al ritorno
+        document.getElementById('backBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
