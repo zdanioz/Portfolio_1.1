@@ -152,24 +152,24 @@ main {
 .back-button { position: fixed; top: 30px; left: 30px; z-index: 200; text-decoration: none; color: #000; background: rgba(255,255,255, 0.9); padding: 10px 20px; font-weight: bold; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
 .back-button:hover { transform: scale(1.05); }
 
-/* --- NUOVO LOADER PROJECTS --- */
+
+/* --- NUOVO LOADER PROJECTS & STARTUP --- */
 .loader-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* CAMBIAMENTO 1: Sfondo bianco (uguale al sito) invece di nero */
-    background-color: #fbfbfb; 
-    
+    background-color: #fbfbfb;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    
+    /* CAMBIAMENTO: Parte visibile di default (opacity 1) */
+    opacity: 1; 
+    pointer-events: all;
+    transition: opacity 0.5s ease;
 }
 
 .loader-overlay.active {
@@ -177,29 +177,16 @@ main {
     pointer-events: all;
 }
 
-/* Stile del testo mascherato */
-.masked-text {
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 10vw; 
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 0;
-    
-    /* La magia della maschera */
-    background-image: url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=1000&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    
-    /* Rende l'interno trasparente */
-    color: transparent; 
-    
-    /* CAMBIAMENTO 2: AGGIUNTO IL BORDO NERO */
-    /* Questo crea un contorno nero di 2px attorno alle lettere.
-       Così si legge perfettamente anche su sfondo bianco! */
-    /*-webkit-text-stroke: 1px #000; */
-    
-    transition: background-image 0.1s ease-in-out;
+/* Questa classe servirà per nasconderlo al caricamento completato */
+.loader-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Lo stile dell'SVG è gestito internamente o via classi .line */
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
 }
